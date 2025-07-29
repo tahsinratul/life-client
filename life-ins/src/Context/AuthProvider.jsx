@@ -1,56 +1,96 @@
-import React, { useEffect, useState } from "react";
-import { AuthContext } from "./AuthContext";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-import { auth } from "../firebase.config";
+import React, { createContext, useEffect, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+
+  onAuthStateChanged,
+  getAuth,
+  updateProfile,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
+
+import app from "../Firebase/firebase.init";
+import axios from "axios";
+
+export const AuthContext = createContext();
+
+const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+  // Create user with email/password
+  const createUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-    const createUser = (email,password) => {
-        return createUserWithEmailAndPassword(auth, email,password);
-    }
-    const loginUser = (email,password) => {
-        return signInWithEmailAndPassword(auth, email,password);
-    }
 
-    const loginUserWithGoogle = (provider) => {
-        return signInWithPopup(auth,provider);
-    }
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-          if (currentUser) {
-            setUser(currentUser);
-          } else {
-            setUser(null);
-          }
-          setLoading(false);
-          console.log('user in the auth state change', currentUser)
-        });
-        return () => unsubscribe();
-      }, []);
-      
+  const SignIn = (email,password)=>{
+  setLoading(true)
+  return  signInWithEmailAndPassword(auth,email,password)
 
-    const logOutUser = () => {
-        return signOut(auth);
-    }
+  }
 
-    const userInfo = {
-        user,
-        setUser,
-        createUser,
-        loginUser,
-        logOutUser,
-        loading,
-        loginUserWithGoogle
-    }
-    return (
-        <AuthContext value={userInfo}>
-            {children}
-        </AuthContext>
-    )
+
+
+
+    const provider = new GoogleAuthProvider();
+  const GoogleSignIn = () =>{
+   return  signInWithPopup(auth,provider)
+  }
+
+  const LogOut = ()=>{
+    setLoading(true)
+    return signOut(auth)
+  }
+
+
+
+  const UpdatedInfo = (profileInfo) =>{
+  return updateProfile(auth.currentUser,profileInfo)
+}
+  // Auth state observer
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if(currentUser?.email){
+        const userData = {email:currentUser?.email}
+      axios.post('https://life-insurance-server-side.vercel.app/jwt',userData,{
+        withCredentials:true,
+      })
+      .then(res=>{
+        console.log(res.data)
+      })
+      .catch(error=> console.log(error))
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const authData = {
+    user,
+    loading,
+    createUser,
+    updateProfile,
+    SignIn,
+    GoogleSignIn,
+    LogOut,
+    UpdatedInfo
+   
+  };
+
+  return (
+    <AuthContext value={authData}>
+      {children}
+    </AuthContext>
+  );
 };
 
 export default AuthProvider;
