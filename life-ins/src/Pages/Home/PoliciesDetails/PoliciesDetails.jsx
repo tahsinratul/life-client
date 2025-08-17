@@ -117,13 +117,6 @@ const PoliciesDetails = () => {
               <HiOutlineCalculator className="w-5 h-5" />
               Get a Free Quote
             </Link>
-            <Link
-              to="/agents"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] rounded-md hover:bg-[var(--color-primary)] hover:text-white transition-all font-medium"
-            >
-              <HiOutlineUser className="w-5 h-5" />
-              Book Agent Consultation
-            </Link>
           </div>
         </div>
       </div>

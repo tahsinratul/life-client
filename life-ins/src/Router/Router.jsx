@@ -33,12 +33,14 @@ import AgentClaimReview from "../Pages/Dashboard/Agent/AgentClaimReview";
 import ManageTransactions from "../Pages/Dashboard/Admin/ManageTransactions";
 import DetailsBlogs from "../Pages/Home/DetailsBlogs";
 import AllBlogs from "../Pages/AllBlogs/AllBlogs";
+import ErrorPage from "../Components/ErrorPage";
 
 
  export const router = createBrowserRouter([
   {
   path: "/",
    Component:RootLayout,
+   errorElement: <ErrorPage></ErrorPage>,
    children:[
     {
         index:true,
