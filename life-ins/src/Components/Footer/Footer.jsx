@@ -2,6 +2,8 @@ import React from "react";
 import { FaFacebookF, FaGithub,  FaLinkedinIn, } from "react-icons/fa";
 import logo from "/logo.png"
 
+// footer fix
+
 
 
 const Footer = () => {
