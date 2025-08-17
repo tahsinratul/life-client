@@ -18,7 +18,6 @@ const MeetOurAgents = () => {
     <div className="max-w-7xl mx-auto px-4 py-16">
      <div className="text-center mb-12">
   <div className="flex justify-center items-center gap-3 text-[var(--color-primary)] mb-2">
-    <FaUserTie className="text-4xl" />
     <h2 className="text-4xl font-bold">Meet Our Featured Agents</h2>
   </div>
   <p className="text-gray-600 text-lg max-w-xl mx-auto">

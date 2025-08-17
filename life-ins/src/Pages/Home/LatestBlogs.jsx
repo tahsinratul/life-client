@@ -18,7 +18,7 @@ const LatestBlogs = () => {
 
   return (
     <div className="py-14">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-[var(--color-primary)] mb-2">
           Latest Blog & Articles
         </h2>

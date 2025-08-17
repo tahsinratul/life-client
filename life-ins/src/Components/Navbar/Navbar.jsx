@@ -99,8 +99,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-slate-800 shadow-sm fixed top-0 z-50 w-full px-4 max-w-7xl">
-      <div className="navbar mx-auto flex justify-between items-center py-2">
+   <div className="flex justify-center items-center font-display">
+      <div className="mx-auto w-full fixed top-0 z-50  flex justify-between items-center text-base font-normal py-2 px-8 bg-slate-800 shadow-md">
         {/* Left (Logo + Brand) */}
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
@@ -120,7 +120,7 @@ const Navbar = () => {
             (user ? (
               <button
                 onClick={handleLogout}
-                className="btn bg-white text-red-600 hover:bg-red-100 flex items-center gap-2"
+                className="btn bg-white text-slate-700 hover:bg-red-100 flex items-center gap-2"
               >
                 <FaSignOutAlt /> Logout
               </button>

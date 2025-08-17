@@ -31,7 +31,7 @@ const AllPolicies = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="max-w-7xl mx-auto px-4 py-10 mt-20">
       <div className="flex justify-between items-start mb-4">
         {/* Left: Search */}
         <div className=" lg:w-60 md:w-1/2">

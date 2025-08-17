@@ -39,7 +39,7 @@ const Subscribtion = () => {
   };
 
   return (
-    <div className="bg-slate-800 py-16 px-4 w-full">
+    <div className="bg-slate-800 py-16 px-4 max-w-7xl">
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-white mb-2 flex justify-center items-center gap-2">
           <FaEnvelopeOpenText /> Newsletter Subscription
@@ -70,7 +70,7 @@ const Subscribtion = () => {
           />
           <button
             type="submit"
-            className="btn bg-white text-[#1E40AF] font-semibold md:col-span-2 hover:bg-gray-100 transition"
+            className="btn bg-white text-slate-800 font-semibold md:col-span-2 hover:bg-gray-100 transition"
           >
             Subscribe
           </button>

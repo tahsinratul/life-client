@@ -1,61 +1,66 @@
-import React from 'react';
-import { Link } from 'react-router'; // ✅ Correct import
-import logo from '/logo.png';
+import React from "react";
+import { FaFacebookF, FaGithub,  FaLinkedinIn, } from "react-icons/fa";
+import logo from "/logo.png"
+
+
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 text-base-content border-t">
-      <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-slate-800 text-white py-12 px-6 md:px-12 font-display">
+      <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-4 text-sm">
 
-        {/* Branding */}
+        {/* Logo & Tagline */}
         <div>
-          <Link to="/" className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="LifeSure Logo" className="w-10 h-10" />
-            <span className="text-2xl font-bold text-primary">Life Care</span>
-          </Link>
-          <p className="text-sm leading-relaxed text-gray-500">
-            LifeCare is a modern life insurance platform focused on secure, personalized, and transparent insurance management — trusted by thousands.
-          </p>
+          <img loading="lazy" src={logo} alt="logo" className="size-15"/>
+          <h2 className="text-2xl font-bold text-white mb-2">Life Care</h2>
+          <p className="text-white">Reliable. Affordable. Fast.</p>
         </div>
 
         {/* Navigation */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Navigation</h3>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="hover:text-primary">Home</Link></li>
-            <li><Link to="/policies" className="hover:text-primary">All Policies</Link></li>
-            <li><Link to="/agents" className="hover:text-primary">Agents</Link></li>
-            <li><Link to="/faq" className="hover:text-primary">FAQ</Link></li>
+          <h3 className="text-lg font-semibold text-white mb-3">Company</h3>
+          <ul className="space-y-2 text-white">
+            <li><a  className="hover:text-white transition">About Us</a></li>
+            <li><a  className="hover:text-white transition">Careers</a></li>
+            <li><a  className="hover:text-white transition">Blog</a></li>
+            <li><a  className="hover:text-white transition">Contact</a></li>
           </ul>
         </div>
 
-        {/* Resources */}
+        {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Resources</h3>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/dashboard" className="hover:text-primary">Dashboard</Link></li>
-            <li><Link to="/blogs" className="hover:text-primary">Blogs</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">Contact Support</Link></li>
-            <li><Link to="/terms" className="hover:text-primary">Terms & Conditions</Link></li>
+          <h3 className="text-lg font-semibold text-white mb-3">Services</h3>
+          <ul className="space-y-2 text-white">
+            <li><a className="hover:text-white transition">Insurance Package</a></li>
+            <li><a className="hover:text-white transition">Luxury Tour</a></li>
+            <li><a  className="hover:text-white transition">Airport Pickup</a></li>
+            <li><a  className="hover:text-white transition">Deals & Offers</a></li>
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* Social & Contact */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
-          <ul className="space-y-2 text-sm text-gray-500">
-            <li>Email: support@lifesure.com</li>
-            <li>Phone: +880-1234-567890</li>
-            <li>Location: Dhaka, Bangladesh</li>
-          </ul>
+          <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
+          <div className="flex space-x-4 mb-4">
+            <a href="https://www.facebook.com/tahsinfahim.ratul/" target="_blank" className="bg-slate-600 hover:bg-slate-700 p-2 rounded-full transition">
+              <FaFacebookF />
+            </a>
+            <a href="https://github.com/tahsinratul" target="_blank" className="bg-slate-600 hover:bg-slate-700 p-2 rounded-full transition">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/tahsin-fahim-ratul/" target="_blank" className="bg-slate-600 hover:bg-slate-700 p-2 rounded-full transition">
+              <FaLinkedinIn />
+            </a>
+          </div>
+          <p className="text-white">Email: support@lifecare.com</p>
+          <p className="text-white">Phone: +1 800 123 456</p>
         </div>
+
       </div>
 
-      {/* Copyright */}
-      <div className="border-t bg-base-300">
-        <div className="max-w-7xl mx-auto px-4 py-4 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} <span className="text-primary font-semibold">Life Care</span>. All rights reserved.
-        </div>
+      {/* Bottom Line */}
+      <div className="border-t border-[#004C66] mt-10 pt-6 text-center text-white text-xs">
+        &copy; {new Date().getFullYear()} Life-care. All rights reserved.
       </div>
     </footer>
   );

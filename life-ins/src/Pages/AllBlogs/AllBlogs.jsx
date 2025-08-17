@@ -28,7 +28,7 @@ const AllBlogs = () => {
   };
 
   return (
-    <div className="py-14">
+    <div className="py-14 mt-20">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-[var(--color-primary)] mb-2 flex items-center justify-center gap-2">
           <FaRegNewspaper className="text-[var(--color-primary)]" />
@@ -72,15 +72,7 @@ const AllBlogs = () => {
           </div>
         )}
 
-        {/* See All Blogs Button */}
-        <div className="text-center mt-10">
-          <Link
-            to="/blogs"
-            className="inline-block bg-[var(--color-primary)] text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition"
-          >
-            See All Blogs
-          </Link>
-        </div>
+       
       </div>
 
       {/* Modal */}

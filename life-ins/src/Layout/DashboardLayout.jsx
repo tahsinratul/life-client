@@ -10,8 +10,10 @@ import {
   FaBars,
 } from 'react-icons/fa';
 
-import UseUserRole from '../Hooks/UseUserRole';
+
 import Logo from '../Hooks/Logo';
+import UseUserRole from '../Hooks/UseUserRole';
+
 
 const DashboardLayout = () => {
   const { role, isRoleLoading } = UseUserRole();

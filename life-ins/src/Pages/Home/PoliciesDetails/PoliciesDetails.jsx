@@ -30,7 +30,7 @@ const PoliciesDetails = () => {
   if (isError || !policy) return <div className="text-center text-red-600">Failed to load policy.</div>;
 
   return (
-    <section className="min-h-screen  px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen  px-6 mt-30 mb-2">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start  shadow-lg rounded-xl overflow-hidden">
         
         {/* Image Section */}

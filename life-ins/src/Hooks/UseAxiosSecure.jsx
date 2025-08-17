@@ -9,7 +9,7 @@ const UseAxiosSecure = () => {
 
   // Create axios instance
   const axiosSecure = axios.create({
-    baseURL: 'https://life-server-one.vercel.app',
+    baseURL: 'https://life-insurance-server-side.vercel.app/',
     withCredentials:true
   });
 
